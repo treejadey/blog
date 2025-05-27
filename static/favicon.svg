@@ -1,0 +1,13 @@
+<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <style>
+        #meow {
+            fill: #141414;
+        }
+        @media (prefers-color-scheme: dark) {
+            #meow {
+                fill: #f0f0f0;
+            }
+        }
+    </style>
+<path id="meow" d="M8 15C5.6 15 5 12.8333 5 12V8.91667L1 9.66667V6.58333L5 5.83333V1H8V5L14.5 4L15 6.5L8 8V9C8 12 8.83333 12 9 12H11C12.6 12 12 9 12 9C12 9 13 10 15 10C15 13.6 13 15 12 15H8Z" fill="currentColor"/>
+</svg>
