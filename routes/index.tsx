@@ -62,7 +62,7 @@ export default define.page(function Home() {
 
       <br />
 
-      <h2>Friends (in order of how much I like them)</h2>
+      <h2>Friends (in a very important order)</h2>
 
       <ul class="friend-buttons">
         <FriendShuffler>
@@ -82,6 +82,16 @@ export default define.page(function Home() {
           />
         </FriendShuffler>
       </ul>
+      <br />
+
+      <h3>You can have my button if you want (make sure to link here)</h3>
+      <img
+        src="treuks.png"
+        width="88"
+        height="31"
+        loading="lazy"
+        alt="pink and green button with treuks' persona staring in a corner. there is text on it (treuks)"
+      />
     </>
   );
 });
