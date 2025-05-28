@@ -2,13 +2,14 @@ import { define } from "../utils.ts";
 import { StaticFriend } from "../components/StaticFriend.tsx";
 import { AnimatedFriend } from "../components/AnimatedFriend.tsx";
 import { FriendShuffler } from "../components/FriendShuffler.tsx";
+import { asset } from "fresh/runtime";
 
 export default define.page(function Home() {
   return (
     <>
       <img
         class="pfp"
-        src="pfp.png"
+        src={asset("/pfp.png")}
         alt="Roxy Lalonde from Homestuck with an attached cat tail and paw gloves. Drawn by raptley (rest in peace)."
         height="300"
         loading="lazy"
@@ -86,7 +87,7 @@ export default define.page(function Home() {
 
       <h3>You can have my button if you want (make sure to link here)</h3>
       <img
-        src="treuks.png"
+        src={asset("/treuks.png")}
         width="88"
         height="31"
         loading="lazy"

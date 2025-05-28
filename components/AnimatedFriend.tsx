@@ -1,3 +1,5 @@
+import { asset } from "fresh/runtime";
+
 export interface FriendProps {
   href: string;
   name: string;
@@ -9,7 +11,7 @@ export function AnimatedFriend(props: FriendProps) {
     <>
       <a class="friend" href={props.href}>
         <img
-          src={`buttons/animated/${props.name}.gif`}
+          src={asset(`buttons/animated/${props.name}.gif`)}
           class="animated"
           alt={props.alt ? props.alt : props.name}
           width="88"
@@ -17,7 +19,7 @@ export function AnimatedFriend(props: FriendProps) {
           loading="lazy"
         />
         <img
-          src={`buttons/static/${props.name}.png`}
+          src={asset(`buttons/static/${props.name}.png`)}
           class="static"
           alt={props.alt ? props.alt : props.name}
           width="88"

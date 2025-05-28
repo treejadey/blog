@@ -1,4 +1,5 @@
 import type { PageProps } from "fresh";
+import { asset } from "fresh/runtime";
 
 export default function App({ Component }: PageProps) {
   return (
@@ -8,8 +9,8 @@ export default function App({ Component }: PageProps) {
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>treuks</title>
 
-        <link rel="stylesheet" href="/reset.css" />
-        <link rel="stylesheet" href="/style.css" />
+        <link rel="stylesheet" href={asset("/reset.css")} />
+        <link rel="stylesheet" href={asset("/style.css")} />
 
         <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
         <link rel="icon" type="image/png" href="/favicon.png" />
