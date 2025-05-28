@@ -10,6 +10,8 @@ export type Post = {
   snippet: string;
 };
 
+type PostFrontmatter = { title: string; published_at: Date; snippet: string };
+
 export async function getPost(slug: string): Promise<Post | null> {
   let text: string;
   try {
@@ -18,14 +20,8 @@ export async function getPost(slug: string): Promise<Post | null> {
     return null;
   }
 
-  const { attrs, body } = extract<Post>(text);
-  return {
-    slug,
-    title: attrs.title,
-    published_at: new Date(attrs.published_at),
-    content: body,
-    snippet: attrs.snippet as string,
-  };
+  const { attrs, body } = extract<PostFrontmatter>(text);
+  return { ...attrs, slug, content: body };
 }
 
 export async function getPosts(): Promise<Post[]> {
@@ -39,6 +35,7 @@ export async function getPosts(): Promise<Post[]> {
 
   const posts = await Promise.all(promises) as Post[];
   posts.sort((a, b) => b.published_at.getTime() - a.published_at.getTime());
+
   return posts;
 }
 

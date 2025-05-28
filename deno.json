@@ -18,13 +18,14 @@
     "**/_fresh/*"
   ],
   "imports": {
+    "@shikijs/markdown-it": "npm:@shikijs/markdown-it@^3.4.2",
     "@std/front-matter": "jsr:@std/front-matter@^1.0.9",
     "@std/path": "jsr:@std/path@^1.1.0",
     "fresh": "jsr:@fresh/core@^2.0.0-alpha.34",
     "@fresh/plugin-tailwind": "jsr:@fresh/plugin-tailwind@^0.0.1-alpha.7",
+    "markdown-it": "npm:markdown-it@^14.1.0",
     "preact": "npm:preact@^10.26.6",
-    "@preact/signals": "npm:@preact/signals@^2.0.4",
-    "marked": "npm:marked@^15.0.12"
+    "@preact/signals": "npm:@preact/signals@^2.0.4"
   },
   "compilerOptions": {
     "lib": [

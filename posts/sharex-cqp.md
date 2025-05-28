@@ -43,7 +43,7 @@ I am also a big fan of ShareX and while using the video recording option in it,
 as usual, I realised that I should probably enable CQP in it too, but it doesn't
 come with any kind of CQP options if you're using the H264 Nvidia option.
 
-![ShareX settings. Video encoder is set to H.264 / NVENC. Only option for video recording is constant bitrate, which is set to 6000](https://i.treuks.com/zJNq9)
+![ShareX settings. Video encoder is set to "H.264 / NVENC." Only option for video recording is constant bitrate, which is set to 6000](https://i.treuks.com/zJNq9)
 
 After seeing that it does not have a CQP option, I started googling for how to
 enable CQP in ffmpeg, which is where I realised that it is very much not
