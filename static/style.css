@@ -106,9 +106,18 @@ footer {
   & pre {
     overflow: auto;
     padding: 0.5rem;
-    outline: 1px solid light-dark(#0000001a, #333333);
+    outline: 1px solid light-dark(#e3e3e3, #2b2b2b);
 
-    border-radius: 0.25rem;
+    /* border-radius: 0.25rem; */
+  }
+
+  & blockquote {
+    border-left: 2px solid light-dark(#bdbdbd, #666);
+    padding: 0.35rem;
+
+    & * {
+      margin-left: 0.5rem;
+    }
   }
 }
 
