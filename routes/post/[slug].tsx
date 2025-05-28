@@ -2,8 +2,7 @@ import { define } from "../../utils.ts";
 import { HttpError, page } from "fresh";
 import { getPost } from "../posts.tsx";
 
-import Shiki from "@shikijs/markdown-it";
-import MarkdownIt from "markdown-it";
+import MarkdownItAsync from "markdown-it-async";
 
 export const handler = define.handlers({
   async GET(ctx) {
@@ -18,20 +17,26 @@ export const handler = define.handlers({
   },
 });
 
-const markdownRenderer = async () => {
-  const md = MarkdownIt().use(
-    await Shiki({ themes: { light: "vitesse-light", dark: "poimandres" } }),
-  );
+const markdownRenderer = () => {
+  const md = MarkdownItAsync({
+    async highlight(code, lang) {
+      const { codeToHtml } = await import("shiki");
+      return await codeToHtml(code, {
+        lang,
+        themes: { light: "vitesse-light", dark: "poimandres" },
+      });
+    },
+  });
 
-  return (document: string) => {
-    return md.render(document);
+  return async (document: string) => {
+    return await md.renderAsync(document);
   };
 };
 
-const render = await markdownRenderer();
+const render = markdownRenderer();
 
-export default define.page<typeof handler>(function Post({ data }) {
-  const renderedMd = render(data.post.content);
+export default define.page<typeof handler>(async function Post({ data }) {
+  const renderedMd = await render(data.post.content);
 
   return (
     <>
