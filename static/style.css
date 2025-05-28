@@ -119,6 +119,11 @@ footer {
       margin-left: 0.5rem;
     }
   }
+
+  & p:has(img) {
+    display: flex;
+    justify-content: center;
+  }
 }
 
 code {
