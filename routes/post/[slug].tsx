@@ -18,12 +18,18 @@ export const handler = define.handlers({
 });
 
 const markdownRenderer = () => {
+  const themes = {
+    light: "one-light",
+    dark: "tokyo-night",
+  };
+
   const md = MarkdownItAsync({
     async highlight(code, lang) {
       const { codeToHtml } = await import("shiki");
+
       return await codeToHtml(code, {
         lang,
-        themes: { light: "vitesse-light", dark: "poimandres" },
+        themes,
       });
     },
   });

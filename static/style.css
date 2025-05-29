@@ -33,7 +33,7 @@ header {
 }
 
 main {
-  width: 55%;
+  width: 45%;
   max-width: 50rem;
   margin: auto;
 }
@@ -106,7 +106,7 @@ footer {
   & pre {
     overflow: auto;
     padding: 0.5rem;
-    outline: 1px solid light-dark(#e3e3e3, #2b2b2b);
+    outline: 1px solid light-dark(#e3e3e3, #313131);
 
     /* border-radius: 0.25rem; */
   }

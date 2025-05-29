@@ -2,6 +2,8 @@ import { define } from "../utils.ts";
 import { extract } from "@std/front-matter/yaml";
 import { join } from "@std/path";
 
+type PostFrontmatter = { title: string; published_at: Date; snippet: string };
+
 export type Post = {
   slug: string;
   title: string;
@@ -9,8 +11,6 @@ export type Post = {
   content: string;
   snippet: string;
 };
-
-type PostFrontmatter = { title: string; published_at: Date; snippet: string };
 
 export async function getPost(slug: string): Promise<Post | null> {
   let text: string;
