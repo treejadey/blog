@@ -69,6 +69,10 @@ main {
   display: none;
 }
 
+.friend {
+  image-rendering: pixelated;
+}
+
 .pfp {
   margin-bottom: 1rem;
 }

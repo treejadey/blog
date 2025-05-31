@@ -87,6 +87,7 @@ export default define.page(function Home() {
 
       <h3>You can have my button if you want (make sure to link here)</h3>
       <img
+        class="friend"
         src={asset("/treuks.png")}
         width="88"
         height="31"
