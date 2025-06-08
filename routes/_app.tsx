@@ -1,5 +1,5 @@
 import type { PageProps } from "fresh";
-import { asset } from "fresh/runtime";
+import { asset, Partial } from "fresh/runtime";
 
 export default function App({ Component }: PageProps) {
   return (
@@ -12,18 +12,20 @@ export default function App({ Component }: PageProps) {
         <link rel="stylesheet" href={asset("/reset.css")} />
         <link rel="stylesheet" href={asset("/style.css")} />
 
-        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-        <link rel="icon" type="image/png" href="/favicon.png" />
+        <link rel="icon" type="image/svg+xml" href={asset("/favicon.svg")} />
+        <link rel="icon" type="image/png" href={asset("/favicon.png")} />
       </head>
       <body>
-        <main>
+        <main f-client-nav>
           <header>
             <a href="/">Home</a>
             <a href="/posts">Posts</a>
             <a href="/notes">Notes</a>
           </header>
 
-          <Component />
+          <Partial name="body">
+            <Component />
+          </Partial>
 
           <footer>
             <div>treuks © 2025</div>
