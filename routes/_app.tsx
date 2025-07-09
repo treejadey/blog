@@ -20,7 +20,6 @@ export default function App({ Component }: PageProps) {
           <header>
             <a href="/">Home</a>
             <a href="/posts">Posts</a>
-            <a href="/notes">Notes</a>
           </header>
 
           <Partial name="body">
