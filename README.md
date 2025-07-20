@@ -1,17 +1,33 @@
-# Fresh project
 
-Your new Fresh project is ready to go. You can follow the Fresh "Getting
-Started" guide here: https://fresh.deno.dev/docs/getting-started
+This is a fairly primitive blog made using Deno Fresh 2. 
 
-### Usage
 
-Make sure to install Deno:
-https://docs.deno.com/runtime/getting_started/installation
+* The website intentionally, and mostly, **abstains from custom colors**, which makes it mostly rely on your browser to color it. The biggest exception to the "rule" are the syntax highlighting blocks, **for which I prioritise readability over the "style".**
+  
+* It stores markdown articles within `posts/`.
 
-Then start the project in development mode:
+* It uses [`Shiki` for syntax highlighting](https://shiki.style/) in markdown blocks. 
 
+**Syntax color schemes:**
+
+| 🌛 Dark     | 🌞 Light  |
+| ----------- | --------- |
+| Tokyo Night | One Light |
+
+I picked these 2 themes out of all of the other supported themes because they are readable and have similar colors.
+
+One Dark Pro looks out of place with the default colors picked by the browsers I tested with.
+
+
+## Building
+
+To run in dev mode:
+```sh
+$ deno task dev
 ```
-deno task dev
-```
 
-This will watch the project directory and restart as necessary.
+To build for production:
+```sh
+$ deno task build
+$ deno task start
+```
