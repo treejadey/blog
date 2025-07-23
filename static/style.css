@@ -32,12 +32,6 @@ header {
   }
 }
 
-main {
-  width: 45%;
-  max-width: 50rem;
-  margin: auto;
-}
-
 .friend-buttons {
   display: flex;
   flex-wrap: wrap;
@@ -92,9 +86,21 @@ footer {
   height: 6rem;
 }
 
+main {
+  width: 45%;
+  max-width: 50rem;
+  margin: auto;
+}
+
 @media screen and (max-width: 600px) {
   main {
     width: 95%;
+  }
+}
+
+@media screen and (max-width: 1300px) {
+  main {
+    width: 90%;
   }
 }
 
