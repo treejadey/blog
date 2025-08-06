@@ -7,7 +7,7 @@ export default function App({ Component }: PageProps) {
       <head>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>treuks</title>
+        <title>treejadey</title>
 
         <link rel="stylesheet" href={asset("/reset.css")} />
         <link rel="stylesheet" href={asset("/style.css")} />
@@ -27,9 +27,9 @@ export default function App({ Component }: PageProps) {
           </Partial>
 
           <footer>
-            <div>treuks © 2025</div>
+            <div>treejadey © 2025</div>
             <div>Site licensed as AGPL 3.0</div>
-            <a href="https://github.com/treuks/blog">Source code</a>
+            <a href="https://github.com/treejadey/blog">Source code</a>
           </footer>
         </main>
       </body>

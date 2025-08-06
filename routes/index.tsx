@@ -15,7 +15,7 @@ export default define.page(function Home() {
         loading="lazy"
       />
 
-      <h1>Hi! I'm treuks!</h1>
+      <h1>Hi! I'm treejadey!</h1>
       <p>Welcome to my webbed site!</p>
 
       <br />
@@ -47,7 +47,7 @@ export default define.page(function Home() {
 
       <ul class="links">
         <li>
-          <a href="https://github.com/treuks">My GitHub</a>
+          <a href="https://github.com/treejadey">My GitHub</a>
         </li>
 
         <li>
@@ -57,7 +57,7 @@ export default define.page(function Home() {
         </li>
 
         <li>
-          <a href="https://twitch.tv/treuks">My Twitch</a>
+          <a href="https://twitch.tv/treejadey">My Twitch</a>
         </li>
       </ul>
 
@@ -88,11 +88,11 @@ export default define.page(function Home() {
       <h3>You can have my button if you want (make sure to link here)</h3>
       <img
         class="friend"
-        src={asset("/treuks.png")}
+        src={asset("/mybutton.png")}
         width="88"
         height="31"
         loading="lazy"
-        alt="pink and green button with treuks' persona staring in a corner. there is text on it (treuks)"
+        alt="pink and green button with treejadeys persona staring in a corner. there is text on it (treejadey)"
       />
     </>
   );
