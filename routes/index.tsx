@@ -2,11 +2,15 @@ import { define } from "../utils.ts";
 import { StaticFriend } from "../components/StaticFriend.tsx";
 import { AnimatedFriend } from "../components/AnimatedFriend.tsx";
 import { FriendShuffler } from "../components/FriendShuffler.tsx";
-import { asset } from "fresh/runtime";
+import { asset, Head } from "fresh/runtime";
 
 export default define.page(function Home() {
   return (
     <>
+      <Head>
+        <meta name="theme-color" content="#6cb9b1" />
+      </Head>
+
       <img
         class="pfp"
         src={asset("/pfp.png")}

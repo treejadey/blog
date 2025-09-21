@@ -10,7 +10,7 @@ export default function App({ Component }: PageProps) {
         <title>treejadey</title>
 
         <link rel="stylesheet" href={asset("/reset.css")} />
-        <link rel="stylesheet" href={asset("/style.css")} />
+        <link rel="stylesheet" href={asset("/styles.css")} />
 
         <link rel="icon" type="image/svg+xml" href={asset("/favicon.svg")} />
         <link rel="icon" type="image/png" href={asset("/favicon.png")} />

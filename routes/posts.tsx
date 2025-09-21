@@ -1,6 +1,7 @@
 import { define } from "../utils.ts";
 import { extract } from "@std/front-matter/yaml";
 import { join } from "@std/path";
+import { Head } from "fresh/runtime";
 
 type PostFrontmatter = { title: string; published_at: Date; snippet: string };
 
@@ -43,6 +44,9 @@ export default define.page(async function Posts() {
   const posts = await getPosts();
   return (
     <>
+      <Head>
+        <meta name="theme-color" content="#6cb9b1" />
+      </Head>
       <ol>
         {posts.map((post) => (
           <li>

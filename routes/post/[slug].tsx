@@ -1,8 +1,10 @@
 import { define } from "../../utils.ts";
 import { HttpError, page } from "fresh";
 import { getPost } from "../posts.tsx";
+import { Head } from "fresh/runtime";
 
 import MarkdownItAsync from "markdown-it-async";
+import { context } from "npm:esbuild@0.25.7";
 
 export const handler = define.handlers({
   async GET(ctx) {
@@ -13,7 +15,9 @@ export const handler = define.handlers({
       throw new HttpError(404);
     }
 
-    return page({ post });
+    const url = ctx.url;
+
+    return page({ post, url });
   },
 });
 
@@ -43,9 +47,41 @@ const render = markdownRenderer();
 
 export default define.page<typeof handler>(async function Post({ data }) {
   const renderedMd = await render(data.post.content);
+  const { post } = data;
 
+  const currentUrl = data.url.toString();
+  const rootUrl = data.url.origin;
+
+  const pfpLocationUrl = rootUrl + "/megpfp.png";
   return (
     <>
+      <Head>
+        <title>{post.title} - treejadey</title>
+        <meta property="og:title" content={post.title} />
+        <meta property="og:description" content={post.snippet} />
+        <meta property="og:url" content={currentUrl} />
+
+        <meta property="og:image" content={pfpLocationUrl} />
+        <meta property="og:image:height" content="460" />
+        <meta property="og:image:width" content="460" />
+        <meta
+          property="og:image:alt"
+          content="Shy pale girl with dragon horns and aquamarine colored hair, left eye visible, right eye covered by hair."
+        />
+
+        <meta name="og:site_name" content="Treejadey's personal website." />
+        <meta property="og:type" content="article" />
+        <meta name="article:author" content="Jade" />
+
+        <meta
+          name="article:published_time"
+          content={post.published_at.toISOString()}
+        />
+
+        <meta name="description" content={post.snippet} />
+        <meta name="theme-color" content="#6cb9b1" />
+      </Head>
+
       <div class="article-header">
         <h1>{data.post.title}</h1>
         <time>
