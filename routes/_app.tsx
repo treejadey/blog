@@ -12,8 +12,8 @@ export default function App({ Component }: PageProps) {
         <link rel="stylesheet" href="/reset.css" />
         <link rel="stylesheet" href="/styles.css" />
 
-        <link rel="icon" type="image/svg+xml" href="favicon.svg" />
-        <link rel="icon" type="image/png" href="favicon.png" />
+        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+        <link rel="icon" type="image/png" href="/favicon.png" />
       </head>
       <body>
         <main f-client-nav>
