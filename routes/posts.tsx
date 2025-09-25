@@ -47,19 +47,27 @@ export default define.page(async function Posts() {
       <Head>
         <meta name="theme-color" content="#6cb9b1" />
       </Head>
-      <ol>
+      <ul class="article-list">
         {posts.map((post) => (
           <li>
-            <a href={`/post/${post.slug}`}>
-              {post.title} - {post.published_at.toLocaleDateString("en-us", {
-                year: "numeric",
-                month: "long",
-                day: "numeric",
-              })}
-            </a>
+            <article>
+              <a href={`/post/${post.slug}`}>
+                {post.title}
+              </a>
+              <p>{post.snippet}</p>
+              <time
+                datetime={post.published_at.toISOString()}
+              >
+                {post.published_at.toLocaleDateString("en-us", {
+                  year: "numeric",
+                  month: "long",
+                  day: "numeric",
+                })}
+              </time>
+            </article>
           </li>
         ))}
-      </ol>
+      </ul>
     </>
   );
 });

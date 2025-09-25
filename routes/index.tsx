@@ -2,7 +2,7 @@ import { define } from "../utils.ts";
 import { StaticFriend } from "../components/StaticFriend.tsx";
 import { AnimatedFriend } from "../components/AnimatedFriend.tsx";
 import { FriendShuffler } from "../components/FriendShuffler.tsx";
-import { asset, Head } from "fresh/runtime";
+import { Head } from "fresh/runtime";
 
 export default define.page(function Home() {
   return (
@@ -11,38 +11,54 @@ export default define.page(function Home() {
         <meta name="theme-color" content="#6cb9b1" />
       </Head>
 
-      <img
-        class="pfp"
-        src={asset("/pfp.png")}
-        alt="Roxy Lalonde from Homestuck with an attached cat tail and paw gloves. Drawn by raptley (rest in peace)."
-        height="300"
-        loading="lazy"
-      />
-
       <h1>Hi! I'm treejadey!</h1>
       <p>Welcome to my webbed site!</p>
+      <br />
+
+      <figure>
+        <picture>
+          <source srcset="/meg_cropped_art.avif" type="image/avif" />
+          <source srcset="/meg_cropped_art.webp" type="image/webp" />
+          <img
+            class="pfp"
+            src="/meg_cropped_art.png"
+            alt="Shy pale girl with dragon horns and aquamarine colored hair, left eye visible, right eye covered by hair."
+            height="390"
+            loading="lazy"
+          />
+        </picture>
+
+        <figcaption>
+          This is me irl in case you were wondering ahaha (real).{" "}
+          <a href="https://bsky.app/profile/did:plc:w3sldsifm5pm4sojcqk2u4th/post/3kib7kjultl2x">
+            Original art by megrocks
+          </a>
+        </figcaption>
+      </figure>
 
       <br />
 
-      <h2>About me</h2>
+      <h1>About me</h1>
 
       <p>
         My name is Jade. <b>(she/her)</b> <br />
         I was born in Ukraine, live in Ukraine, stuck in Ukraine. <br />
-        I'm 19, I'm a trans girl, I'm a minimalist, somewhat of a programmer,
-        somewhat of a designer, etc.
+        I'm 19, I'm trans, I'm a minimalist, somewhat of a programmer, somewhat
+        of a designer, etc.
       </p>
 
       <br />
 
       <p>
-        I have some interests, like videogames, can't really call myself a gamer
-        though.
+        I like videogames.
       </p>
 
       <p>
-        I really like the Source engine and Valve games in general (I have
-        around 2200 hours in TF2).
+        I really like the Source 1 engine and Valve games in general (I have
+        around 2260 hours in TF2).
+      </p>
+      <p>
+        I guess I'm known for liking and identifying fonts.
       </p>
 
       <br />
@@ -76,7 +92,7 @@ export default define.page(function Home() {
             alt="522@5snb.club"
             href="https://www.5snb.club/"
           />
-          <AnimatedFriend
+          <StaticFriend
             name="cy"
             href="https://cy-bernet-ix.neocities.org/"
           />
@@ -92,7 +108,7 @@ export default define.page(function Home() {
       <h3>You can have my button if you want (make sure to link here)</h3>
       <img
         class="friend"
-        src={asset("/mybutton.png")}
+        src="/mybutton.png"
         width="88"
         height="31"
         loading="lazy"

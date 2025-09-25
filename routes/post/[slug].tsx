@@ -4,7 +4,6 @@ import { getPost } from "../posts.tsx";
 import { Head } from "fresh/runtime";
 
 import MarkdownItAsync from "markdown-it-async";
-import { context } from "npm:esbuild@0.25.7";
 
 export const handler = define.handlers({
   async GET(ctx) {
@@ -66,7 +65,7 @@ export default define.page<typeof handler>(async function Post({ data }) {
         <meta property="og:image:width" content="460" />
         <meta
           property="og:image:alt"
-          content="Shy pale girl with dragon horns and aquamarine colored hair, left eye visible, right eye covered by hair."
+          content="Shy pale girl with dragon horns and aquamarine colored hair, left eye visible, right eye covered by hair. Drawn by megrocks https://bsky.app/profile/did:plc:w3sldsifm5pm4sojcqk2u4th"
         />
 
         <meta name="og:site_name" content="Treejadey's personal website." />
@@ -83,9 +82,9 @@ export default define.page<typeof handler>(async function Post({ data }) {
       </Head>
 
       <div class="article-header">
-        <h1>{data.post.title}</h1>
-        <time>
-          {data.post.published_at.toLocaleDateString("en-us", {
+        <h1>{post.title}</h1>
+        <time datetime={post.published_at.toISOString()}>
+          {post.published_at.toLocaleDateString("en-us", {
             year: "numeric",
             month: "long",
             day: "numeric",

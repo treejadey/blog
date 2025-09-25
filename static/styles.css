@@ -51,6 +51,10 @@
     Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue",
     sans-serif;
   font-size: 18px;
+
+  --big-text-color: light-dark(#161616, #f0f0f0);
+  --text-color: light-dark(#535353, #b9b9b9);
+  --secondary-text-color: light-dark(#6e6e6e, #a1a1a1);
 }
 
 header {
@@ -64,10 +68,12 @@ header {
   border-bottom: 1px solid light-dark(#c4c4c4, #4e4e4e);
 
   & a {
-    font-size: 24px;
+    font-size: 32px;
+    font-weight: 200;
 
     &[aria-current="page"] {
-      color: light-dark(black, white);
+      font-weight: 700;
+      color: var(--big-text-color);
       text-decoration: none;
     }
   }
@@ -122,7 +128,8 @@ header {
 footer {
   display: flex;
   align-items: center;
-  margin-top: 2rem;
+
+  margin-top: 1.5rem;
   gap: 1rem;
   height: 6rem;
 }
@@ -147,6 +154,23 @@ main {
 
 .article-header {
   padding-bottom: 1rem;
+  color: var(--big-text-color);
+
+  & time {
+    color: var(--secondary-text-color);
+    font-size: 24px;
+  }
+}
+
+.article-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  padding-left: 0;
+
+  & li article time {
+    color: var(--secondary-text-color);
+  }
 }
 
 .article-content {
@@ -155,12 +179,12 @@ main {
   gap: 0.8rem;
   line-height: 1.7;
 
+  color: var(--text-color);
+
   & pre {
     overflow: auto;
     padding: 0.5rem;
     outline: 1px solid light-dark(#e3e3e3, #313131);
-
-    /* border-radius: 0.25rem; */
   }
 
   & blockquote {
@@ -176,6 +200,14 @@ main {
     display: flex;
     justify-content: center;
   }
+}
+
+& h1, h2, h3, h4, h5 {
+  color: var(--big-text-color);
+}
+
+p {
+  color: var(--text-color);
 }
 
 code {
@@ -203,4 +235,9 @@ h1 {
 
 h2, h3 {
   font-weight: 300;
+}
+
+figcaption {
+  font-size: 14px;
+  color: var(--secondary-text-color);
 }

@@ -1,5 +1,5 @@
 import type { PageProps } from "fresh";
-import { asset, Partial } from "fresh/runtime";
+import { Partial } from "fresh/runtime";
 
 export default function App({ Component }: PageProps) {
   return (
@@ -9,11 +9,11 @@ export default function App({ Component }: PageProps) {
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>treejadey</title>
 
-        <link rel="stylesheet" href={asset("/reset.css")} />
-        <link rel="stylesheet" href={asset("/styles.css")} />
+        <link rel="stylesheet" href="/reset.css" />
+        <link rel="stylesheet" href="/styles.css" />
 
-        <link rel="icon" type="image/svg+xml" href={asset("/favicon.svg")} />
-        <link rel="icon" type="image/png" href={asset("/favicon.png")} />
+        <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+        <link rel="icon" type="image/png" href="favicon.png" />
       </head>
       <body>
         <main f-client-nav>
