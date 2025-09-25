@@ -166,7 +166,6 @@ main {
   display: flex;
   flex-direction: column;
   gap: 0.75rem;
-  padding-left: 0;
 
   & li article time {
     color: var(--secondary-text-color);

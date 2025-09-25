@@ -29,7 +29,7 @@ export default define.page(function Home() {
         </picture>
 
         <figcaption>
-          This is me irl in case you were wondering ahaha (real).{" "}
+          This is me irl in case you were wondering hehe (real).{" "}
           <a href="https://bsky.app/profile/did:plc:w3sldsifm5pm4sojcqk2u4th/post/3kib7kjultl2x">
             Original art by megrocks
           </a>
