@@ -11,9 +11,10 @@ export default define.page(function Home() {
         <meta name="theme-color" content="#6cb9b1" />
       </Head>
 
-      <h1>Hi! I'm treejadey!</h1>
-      <p>Welcome to my webbed site!</p>
-      <br />
+      <div>
+        <h1>Hi! I'm treejadey!</h1>
+        <p>Welcome to my webbed site!</p>
+      </div>
 
       <figure class="fp-image">
         <picture>
@@ -36,32 +37,26 @@ export default define.page(function Home() {
         </figcaption>
       </figure>
 
-      <br />
-
       <h1>About me</h1>
 
       <p>
-        My name is Jade. <b>(she/her)</b> <br />
-        I was born in Ukraine, live in Ukraine, stuck in Ukraine. <br />
+        My name is Jade. <b>(she/her)</b>.
+      </p>
+
+      <p>Born in Ukraine, live in Ukraine, stuck in Ukraine.</p>
+
+      <p>
         I'm 19, I'm trans, I'm a minimalist, somewhat of a programmer, somewhat
         of a designer, etc.
       </p>
 
-      <br />
-
       <p>
-        I like videogames.
-      </p>
-
-      <p>
-        I really like the Source 1 engine and Valve games in general (I have
-        around 2260 hours in TF2).
+        I like videogames. I really like the Source 1 engine and Valve games in
+        general (I have around 2260 hours in TF2).
       </p>
       <p>
         I guess I'm known for liking and identifying fonts.
       </p>
-
-      <br />
 
       <h2>Some of my links</h2>
 
@@ -80,8 +75,6 @@ export default define.page(function Home() {
           <a href="https://twitch.tv/treejadey">My Twitch</a>
         </li>
       </ul>
-
-      <br />
 
       <h2>Friends (in a very important order)</h2>
 
@@ -103,7 +96,6 @@ export default define.page(function Home() {
           />
         </FriendShuffler>
       </ul>
-      <br />
 
       <h3>You can have my button if you want (make sure to link here)</h3>
       <img

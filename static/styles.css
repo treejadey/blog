@@ -146,6 +146,8 @@ main {
   width: 45%;
   max-width: 50rem;
   margin: auto;
+
+  gap: 0.7rem;
 }
 
 @media screen and (max-width: 600px) {
