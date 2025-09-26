@@ -15,7 +15,7 @@ export default define.page(function Home() {
       <p>Welcome to my webbed site!</p>
       <br />
 
-      <figure>
+      <figure class="fp-image">
         <picture>
           <source srcset="/meg_cropped_art.avif" type="image/avif" />
           <source srcset="/meg_cropped_art.webp" type="image/webp" />
