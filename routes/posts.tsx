@@ -40,34 +40,58 @@ export async function getPosts(): Promise<Post[]> {
   return posts;
 }
 
+function formatPosts(posts: Post[]) {
+  const yearMap: Map<number, Post[]> = new Map();
+
+  for (const post of posts) {
+    const year = post.published_at.getUTCFullYear();
+
+    const values = yearMap.get(year);
+
+    if (values === undefined) {
+      yearMap.set(year, [post]);
+    } else {
+      yearMap.set(year, [...values, post]);
+    }
+  }
+
+  return yearMap;
+}
+
 export default define.page(async function Posts() {
   const posts = await getPosts();
+
+  const fPosts = formatPosts(posts);
+
   return (
     <>
       <Head>
         <meta name="theme-color" content="#6cb9b1" />
       </Head>
-      <ul class="article-list">
-        {posts.map((post) => (
-          <li>
-            <article>
-              <a href={`/post/${post.slug}`}>
-                {post.title}
-              </a>
-              <p>{post.snippet}</p>
-              <time
-                datetime={post.published_at.toISOString()}
-              >
-                {post.published_at.toLocaleDateString("en-us", {
-                  year: "numeric",
-                  month: "long",
-                  day: "numeric",
-                })}
-              </time>
-            </article>
-          </li>
+      <div class="article-list-wrapper">
+        {Array.from(fPosts).map(([group, posts]) => (
+          <section key={group}>
+            <h1>- {group}</h1>
+            <ul class="article-list">
+              {posts.map((post) => (
+                <li key={post.slug}>
+                  <article>
+                    <a href={`/post/${post.slug}`}>{post.title}</a>
+                    <p>{post.snippet}</p>
+                    <time dateTime={post.published_at.toISOString()}>
+                      {post.published_at.toLocaleDateString("en-US", {
+                        year: "numeric",
+                        month: "long",
+                        day: "numeric",
+                      })}
+                    </time>
+                  </article>
+                </li>
+              ))}
+            </ul>
+          </section>
         ))}
-      </ul>
+      </div>
     </>
   );
 });
