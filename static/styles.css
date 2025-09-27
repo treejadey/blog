@@ -200,12 +200,15 @@ main {
   gap: 0.8rem;
   line-height: 1.7;
 
+  overflow: hidden;
+
   color: var(--text-color);
 
   & pre {
     overflow: auto;
-    padding: 0.5rem;
-    outline: 1px solid light-dark(#e3e3e3, #313131);
+    padding: 0.5rem 0.75rem;
+
+    border: 1px solid light-dark(#00000023, #ffffff18);
   }
 
   & blockquote {
@@ -220,6 +223,16 @@ main {
   & p:has(img) {
     display: flex;
     justify-content: center;
+  }
+
+  & p code {
+    background-color: light-dark(#00000017, #ffffff0a);
+    padding: 0.25rem 0.4rem;
+
+    font-size: 14px;
+
+    border-radius: 4px;
+    margin: 2px;
   }
 }
 
@@ -261,4 +274,20 @@ h2, h3 {
 figcaption {
   font-size: 14px;
   color: var(--secondary-text-color);
+}
+
+.error-page-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  & h1 {
+    font-size: 92px;
+    font-weight: 100;
+    line-height: 1.15;
+  }
+
+  & p {
+    color: var(--secondary-text-color);
+  }
 }

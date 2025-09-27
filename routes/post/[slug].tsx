@@ -11,7 +11,10 @@ export const handler = define.handlers({
     const post = await getPost(slug);
 
     if (post === null) {
-      throw new HttpError(404);
+      throw new HttpError(
+        404,
+        "This post doesn't exist. Is there a typo in the URL? Did a link get changed?",
+      );
     }
 
     const url = ctx.url;
