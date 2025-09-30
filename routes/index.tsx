@@ -100,11 +100,11 @@ export default define.page(function Home() {
       <h3>You can have my button if you want (make sure to link here)</h3>
       <img
         class="friend"
-        src="/mybutton.png"
+        src="/tailbutton.png"
         width="88"
         height="31"
         loading="lazy"
-        alt="pink and green button with treejadeys persona staring in a corner. there is text on it (treejadey)"
+        alt="White button, with a white dragon tail on it. the tail ends with a pointed aquamarine colored tip. black text says: treejadey"
       />
     </>
   );
